@@ -8,7 +8,9 @@ Type=simple
 ExecStart=rclone mount DriveName:Folder LocalFolder  --copy-links --no-gzip-encoding --no-check-certificate --allow-non-empty --vfs-cache-mode writes --dir-cache-time 23h --vfs-read-chunk-size 64M --vfs-read-chunk-size-limit 2G --umask 000
 ExecStop=fusermount -u LocalFolder
 Restart=on-abort
-User=ireseey
+User=root
+## User=你的用户名，如果三root，可能无法访问
+
 
 [Install]
 WantedBy=default.target
